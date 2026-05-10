@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Mother's Day 💐 — To Every Mom Who Gave It All</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --rose: #C3506E;
+  --rose-light: #E8A0B5;
+  --rose-deep: #8B2252;
+  --gold: #D4A574;
+  --gold-light: #F0D5B8;
+  --cream: #FFF8F2;
+  --blush: #FDE8E0;
+  --lavender: #E8D5E8;
+  --sage: #B5C4A8;
+  --warm-white: #FFFAF5;
+  --text-dark: #3A2025;
+  --text-soft: #6B4A52;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ========== FLOATING PETALS ========== */
+.petals-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -60px;
+  opacity: 0.7;
+  animation: petalFall linear infinite;
+}
+
+@keyframes petalFall {
+  0% { transform: translateX(0) rotate(0deg) scale(1); opacity: 0.8; }
+  25% { transform: translateX(30px) rotate(90deg) scale(0.95); }
+  50% { transform: translateX(-20px) rotate(180deg) scale(0.9); opacity: 0.6; }
+  75% { transform: translateX(40px) rotate(270deg) scale(0.85); }
+  100% { transform: translateX(-10px) rotate(360deg) scale(0.8); opacity: 0; top: 110vh; }
+}
+
+/* ========== SPARKLE CURSOR ========== */
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  font-size: 14px;
+  animation: sparkleAnim 1s ease-out forwards;
+}
+
+@keyframes sparkleAnim {
+  0% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0) translateY(-40px); }
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(232, 160, 181, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(212, 165, 116, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(232, 213, 232, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--warm-white) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C3506E' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--rose);
+  background: rgba(195, 80, 110, 0.08);
+  border: 1px solid rgba(195, 80, 110, 0.15);
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  animation: fadeSlideUp 1s ease-out 0.3s both;
+  letter-spacing: 2px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  animation: fadeSlideUp 1.2s ease-out 0.6s both;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose-light), var(--gold), var(--rose-light));
+  border-radius: 2px;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.6); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-soft);
+  margin-bottom: 2.5rem;
+  animation: fadeSlideUp 1.2s ease-out 0.9s both;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-hearts {
+  animation: fadeSlideUp 1.2s ease-out 1.2s both;
+  font-size: 2.5rem;
+  letter-spacing: 15px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-hearts span {
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hero-hearts span:nth-child(2) { animation-delay: 0.2s; }
+.hero-hearts span:nth-child(3) { animation-delay: 0.4s; }
+.hero-hearts span:nth-child(4) { animation-delay: 0.6s; }
+.hero-hearts span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.3); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.15); }
+  60% { transform: scale(1); }
+}
+
+.scroll-indicator {
+  animation: fadeSlideUp 1.2s ease-out 1.5s both, bounce 2s ease-in-out infinite 2s;
+  font-size: 1rem;
+  color: var(--rose);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scroll-indicator::after {
+  content: '↓';
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== FLOATING DECORATIVE ELEMENTS ========== */
+.float-element {
+  position: absolute;
+  animation: floatAround 8s ease-in-out infinite;
+  font-size: 3rem;
+  opacity: 0.15;
+}
+
+@keyframes floatAround {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(15px, -20px) rotate(5deg); }
+  50% { transform: translate(-10px, -35px) rotate(-3deg); }
+  75% { transform: translate(20px, -15px) rotate(7deg); }
+}
+
+/* ========== IMAGE GALLERY SECTION ========== */
+.gallery-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--warm-white) 0%, var(--blush) 30%, var(--lavender) 70%, var(--warm-white) 100%);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rose-light), var(--gold), var(--rose-light));
+  margin: 1.5rem auto;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.visible .section-label,
+.visible .section-title { opacity: 1; transform: translateY(0); }
+.visible .section-divider { opacity: 1; transform: scaleX(1); }
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 40px rgba(139, 34, 82, 0.1);
+}
+
+.gallery-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.gallery-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(139, 34, 82, 0.2);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(58, 32, 37, 0.85) 0%, rgba(58, 32, 37, 0.2) 40%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  transition: all 0.5s ease;
+}
+
+.gallery-card:hover .overlay {
+  background: linear-gradient(0deg, rgba(58, 32, 37, 0.9) 0%, rgba(58, 32, 37, 0.3) 50%, transparent 70%);
+}
+
+.gallery-card .overlay h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  transform: translateY(10px);
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .overlay h3 { transform: translateY(0); }
+
+.gallery-card .overlay p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.5s ease 0.1s;
+}
+
+.gallery-card:hover .overlay p { transform: translateY(0); opacity: 1; }
+
+/* ========== QUOTE SECTION ========== */
+.quote-section {
+  padding: 8rem 2rem;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(195, 80, 110, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 60%),
+    var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-section::before {
+  content: '"';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 15rem;
+  color: var(--rose-light);
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.quote-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 300px;
+}
+
+.quote-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quote-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.quote-author {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--rose);
+}
+
+.quote-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 5;
+}
+
+.quote-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rose-light);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.quote-dot.active {
+  background: var(--rose);
+  transform: scale(1.3);
+}
+
+/* ========== TRIBUTE CARDS ========== */
+.tribute-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--warm-white) 100%);
+}
+
+.tribute-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tribute-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px) rotate(-2deg);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(139, 34, 82, 0.08);
+}
+
+.tribute-card.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.tribute-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose-light), var(--gold), var(--lavender));
+}
+
+.tribute-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(139, 34, 82, 0.15);
+}
+
+.tribute-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.tribute-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.tribute-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+/* ========== TIMELINE ========== */
+.timeline-section {
+  padding: 6rem 2rem;
+  background: var(--cream);
+  position: relative;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--rose-light), var(--gold), var(--lavender), var(--rose-light));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-item.visible { opacity: 1; }
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+  transform: translateX(-50px);
+}
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+  transform: translateX(50px);
+}
+.timeline-item.visible { transform: translateX(0); }
+
+.timeline-content {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(139, 34, 82, 0.08);
+  position: relative;
+}
+
+.timeline-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--rose-deep);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.timeline-dot {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(195, 80, 110, 0.3);
+  margin: 0 1.5rem;
+}
+
+/* ========== LETTER SECTION ========== */
+.letter-section {
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(232, 213, 232, 0.3) 0%, transparent 70%),
+    var(--blush);
+  display: flex;
+  justify-content: center;
+}
+
+.letter-card {
+  max-width: 700px;
+  background: var(--warm-white);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  position: relative;
+  box-shadow: 0 15px 50px rgba(139, 34, 82, 0.12);
+  opacity: 0;
+  transform: translateY(40px) rotate(-1deg);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.letter-card.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.letter-card::before {
+  content: '💌';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+}
+
+.letter-card h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: var(--rose);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.letter-card p {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+  text-indent: 2rem;
+}
+
+.letter-card .signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--rose-deep);
+  text-align: right;
+  margin-top: 2rem;
+}
+
+/* ========== COUNTER SECTION ========== */
+.counter-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--rose-deep) 0%, var(--rose) 50%, var(--gold) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M40 10c-5 0-9 4-9 8 0 8 9 15 9 15s9-7 9-15c0-4-4-8-9-8z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.counter-item {
+  color: white;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.counter-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.counter-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.counter-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* ========== MESSAGE WALL ========== */
+.messages-section {
+  padding: 6rem 2rem;
+  background: var(--cream);
+}
+
+.messages-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.message-note {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transform: rotate(var(--rotation, 0deg));
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  box-shadow: 0 4px 20px rgba(139, 34, 82, 0.06);
+}
+
+.message-note.visible { opacity: 1; }
+
+.message-note:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(139, 34, 82, 0.15);
+  z-index: 10;
+}
+
+.message-note::before {
+  content: '📌';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
+.message-note p {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.message-note .from {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: var(--rose);
+  margin-top: 1rem;
+  display: block;
+  text-align: right;
+}
+
+/* ========== PHOTO STRIP ========== */
+.photo-strip {
+  padding: 4rem 0;
+  background: var(--blush);
+  overflow: hidden;
+}
+
+.photo-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollTrack 30s linear infinite;
+  width: max-content;
+}
+
+.photo-track:hover { animation-play-state: paused; }
+
+@keyframes scrollTrack {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.photo-item {
+  width: 280px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(139, 34, 82, 0.12);
+  transition: transform 0.5s ease;
+}
+
+.photo-item:hover { transform: scale(1.05); }
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(58, 32, 37, 0.8));
+  padding: 2rem 1.5rem 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* ========== CTA SECTION ========== */
+.cta-section {
+  padding: 8rem 2rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(232, 160, 181, 0.15) 0%, transparent 70%),
+    var(--warm-white);
+  position: relative;
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-section.visible h2 { opacity: 1; transform: translateY(0); }
+
+.cta-section p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--text-soft);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.cta-section.visible p { opacity: 1; transform: translateY(0); }
+
+.cta-btn {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+  border: none;
+  padding: 1.2rem 3.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(195, 80, 110, 0.3);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cta-section.visible .cta-btn { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(195, 80, 110, 0.4);
+}
+
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--gold), var(--rose-light), var(--gold));
+  border-radius: 50px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cta-btn:hover::after { opacity: 1; }
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 3rem 2rem;
+  background: var(--text-dark);
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+}
+
+footer .footer-heart {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+footer a {
+  color: var(--rose-light);
+  text-decoration: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .timeline::before { left: 25px; }
+  .timeline-item, .timeline-item:nth-child(even) {
+    flex-direction: row !important;
+    transform: translateX(-30px);
+  }
+  .timeline-item.visible { transform: translateX(0); }
+  .timeline-dot { margin: 0 1rem 0 0; }
+  .letter-card { padding: 3rem 2rem; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== BUTTERFLY ========== */
+.butterfly {
+  position: fixed;
+  font-size: 1.8rem;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: butterflyFloat 20s ease-in-out infinite;
+}
+
+@keyframes butterflyFloat {
+  0% { top: 70%; left: -5%; transform: rotate(15deg) scale(1); }
+  15% { top: 40%; left: 20%; transform: rotate(-10deg) scale(1.1); }
+  30% { top: 20%; left: 45%; transform: rotate(5deg) scale(0.9); }
+  45% { top: 35%; left: 70%; transform: rotate(-15deg) scale(1.05); }
+  60% { top: 55%; left: 85%; transform: rotate(10deg) scale(1); }
+  75% { top: 30%; left: 60%; transform: rotate(-5deg) scale(1.1); }
+  90% { top: 60%; left: 30%; transform: rotate(12deg) scale(0.95); }
+  100% { top: 70%; left: -5%; transform: rotate(15deg) scale(1); }
+}
+
+.butterfly:nth-child(2) { animation-delay: -7s; font-size: 1.4rem; opacity: 0.5; }
+
+/* ========== ANIMATED BG GRADIENT ========== */
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 200vw; height: 200vh;
+  background: radial-gradient(circle at 30% 30%, rgba(195, 80, 110, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(181, 196, 168, 0.03) 0%, transparent 50%);
+  animation: bgShift 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes bgShift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-5%, -3%); }
+  66% { transform: translate(3%, -5%); }
+}
+</style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="animated-bg"></div>
+
+<!-- Floating Butterflies -->
+<div class="butterfly">🦋</div>
+<div class="butterfly">🦋</div>
+
+<!-- Floating Petals -->
+<div class="petals-container" id="petals"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="float-element" style="top:10%;left:8%;animation-delay:0s;">🌸</div>
+  <div class="float-element" style="top:15%;right:12%;animation-delay:-2s;">🌷</div>
+  <div class="float-element" style="bottom:20%;left:15%;animation-delay:-4s;">🌺</div>
+  <div class="float-element" style="bottom:15%;right:10%;animation-delay:-6s;">💮</div>
+  <div class="float-element" style="top:50%;left:5%;animation-delay:-3s;">🌹</div>
+  <div class="float-element" style="top:40%;right:5%;animation-delay:-5s;">🪻</div>
+
+  <div class="hero-content">
+    <span class="hero-badge">✦ Celebrating Every Mother ✦</span>
+    <h1 class="hero-title">
+      Happy<br><span class="highlight">Mother's Day</span>
+    </h1>
+    <p class="hero-subtitle">
+      To the ones who loved us before we even took our first breath —
+      today, we celebrate you.
+    </p>
+    <div class="hero-hearts">
+      <span>💐</span><span>🤍</span><span>🌸</span><span>🤍</span><span>💐</span>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+      Discover the love
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery-section" id="gallery">
+  <div class="section-header">
+    <span class="section-label">A Celebration of</span>
+    <h2 class="section-title">The Many Faces of Motherhood</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-card" style="transition-delay:0.1s;">
+      <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&h=750&fit=crop" alt="Mother and child embrace" loading="lazy">
+      <div class="overlay">
+        <h3>Unconditional Love</h3>
+        <p>A love that knows no bounds, no conditions, no limits.</p>
+      </div>
+    </div>
+    <div class="gallery-card" style="transition-delay:0.25s;">
+      <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&h=750&fit=crop" alt="Mom holding baby's hand" loading="lazy">
+      <div class="overlay">
+        <h3>Gentle Strength</h3>
+        <p>Soft hands that carry the weight of the whole world.</p>
+      </div>
+    </div>
+    <div class="gallery-card" style="transition-delay:0.4s;">
+      <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=600&h=750&fit=crop" alt="Smiling mother with children" loading="lazy">
+      <div class="overlay">
+        <h3>Endless Joy</h3>
+        <p>Her smile can turn the darkest day into sunshine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTES ============ -->
+<section class="quote-section">
+  <div class="section-header">
+    <span class="section-label">Words from the Heart</span>
+    <h2 class="section-title">In Her Honor</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="quote-carousel">
+    <div class="quote-slide active">
+      <p class="quote-text">A mother's arms are made of tenderness and children sleep soundly in them.</p>
+      <span class="quote-author">— Victor Hugo</span>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">Life doesn't come with a manual, it comes with a mother.</p>
+      <span class="quote-author">— Unknown</span>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">The heart of a mother is a deep abyss at the bottom of which you will always find forgiveness.</p>
+      <span class="quote-author">— Honoré de Balzac</span>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">All that I am, or ever hope to be, I owe to my angel mother.</p>
+      <span class="quote-author">— Abraham Lincoln</span>
+    </div>
+  </div>
+  <div class="quote-dots">
+    <button class="quote-dot active" data-index="0"></button>
+    <button class="quote-dot" data-index="1"></button>
+    <button class="quote-dot" data-index="2"></button>
+    <button class="quote-dot" data-index="3"></button>
+  </div>
+</section>
+
+<!-- ============ TRIBUTE CARDS ============ -->
+<section class="tribute-section">
+  <div class="section-header">
+    <span class="section-label">She is everything</span>
+    <h2 class="section-title">What Makes Mom, Mom</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="tribute-grid">
+    <div class="tribute-card" style="transition-delay:0s;">
+      <span class="tribute-icon">🫂</span>
+      <h3>The Comforter</h3>
+      <p>She held you when the world felt too big. Her embrace was your safe harbor, your refuge, your home within a home.</p>
+    </div>
+    <div class="tribute-card" style="transition-delay:0.15s;">
+      <span class="tribute-icon">🦸‍♀️</span>
+      <h3>The Superhero</h3>
+      <p>No cape, just coffee-stained sleeves and unwavering determination. She fought battles you never even knew about.</p>
+    </div>
+    <div class="tribute-card" style="transition-delay:0.3s;">
+      <span class="tribute-icon">🧭</span>
+      <h3>The Guide</h3>
+      <p>Through every twist and turn of life, she was your compass — always pointing you toward your truest self.</p>
+    </div>
+    <div class="tribute-card" style="transition-delay:0.45s;">
+      <span class="tribute-icon">🌱</span>
+      <h3>The Nurturer</h3>
+      <p>She planted seeds of kindness, watered them with patience, and watched you bloom into something beautiful.</p>
+    </div>
+    <div class="tribute-card" style="transition-delay:0.6s;">
+      <span class="tribute-icon">🏠</span>
+      <h3>The Home</h3>
+      <p>Home was never just a place — it was wherever she was. Her presence turned four walls into a sanctuary.</p>
+    </div>
+    <div class="tribute-card" style="transition-delay:0.75s;">
+      <span class="tribute-icon">✨</span>
+      <h3>The Magic-Maker</h3>
+      <p>She turned ordinary days into adventures, bedtime into stories, and leftovers into the best meals ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="timeline-section">
+  <div class="section-header">
+    <span class="section-label">Through the Years</span>
+    <h2 class="section-title">A Mother's Journey</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>The First Heartbeat</h3>
+        <p>Before you even arrived, she loved you. She felt your tiny kicks and dreamed of your face, whispering promises to the universe.</p>
+      </div>
+      <div class="timeline-dot">💓</div>
+      <div style="flex:1;"></div>
+    </div>
+    <div class="timeline-item">
+      <div style="flex:1;"></div>
+      <div class="timeline-dot">👶</div>
+      <div class="timeline-content">
+        <h3>The Sleepless Nights</h3>
+        <p>She traded her sleep for your safety. Every 2 AM feeding was an act of pure, exhausted love — and she'd do it a million times again.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>The First Steps</h3>
+        <p>She held your tiny hands, walked beside you, and let go — knowing you might fall, but trusting you would rise.</p>
+      </div>
+      <div class="timeline-dot">👣</div>
+      <div style="flex:1;"></div>
+    </div>
+    <div class="timeline-item">
+      <div style="flex:1;"></div>
+      <div class="timeline-dot">🎒</div>
+      <div class="timeline-content">
+        <h3>The School Gate</h3>
+        <p>She waved goodbye with a brave smile, holding back tears. Watching you grow was her greatest pride and her sweetest ache.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>The Forever Bond</h3>
+        <p>Years pass, children grow, but a mother's love never fades. It evolves, deepens, and becomes the golden thread woven through every chapter of life.</p>
+      </div>
+      <div class="timeline-dot">🤍</div>
+      <div style="flex:1;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOVE LETTER ============ -->
+<section class="letter-section">
+  <div class="letter-card">
+    <h2>A Letter to Every Mother</h2>
+    <p>Dear Mom, we know you never asked for a thank you. You never expected a standing ovation for the million small acts of love you performed every single day. But today, we see you.</p>
+    <p>We see the mornings you woke up before the sun just to pack lunches. The nights you stayed up worrying. The tears you hid so we could feel strong. The dreams you quietly set aside so ours could take flight.</p>
+    <p>You are the reason we believe in magic, in kindness, in the power of a warm hug to fix almost anything. You are our first love story, our greatest teacher, and our forever safe place.</p>
+    <p>Thank you for everything — the seen and the unseen, the spoken and the silent. You are extraordinary, even on the days you feel ordinary. We love you beyond words, beyond time, beyond measure.</p>
+    <div class="signature">With all our love, always 💕</div>
+  </div>
+</section>
+
+<!-- ============ COUNTERS ============ -->
+<section class="counter-section">
+  <div class="counter-grid">
+    <div class="counter-item">
+      <div class="counter-number" data-target="2000000000">2B+</div>
+      <div class="counter-label">Mothers Around the World</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-number">∞</div>
+      <div class="counter-label">Hugs Given Daily</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-number">24/7</div>
+      <div class="counter-label">On-Call for Their Children</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-number">#1</div>
+      <div class="counter-label">Hardest & Most Rewarding Job</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCROLLING PHOTOS ============ -->
+<section class="photo-strip">
+  <div class="photo-track">
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=400&h=500&fit=crop" alt="Mother and daughter laughing" loading="lazy">
+      <div class="caption">Laughing together 💕</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=500&fit=crop" alt="Mother reading to child" loading="lazy">
+      <div class="caption">Storytime magic ✨</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1478071735755-29d2d68cfb46?w=400&h=500&fit=crop" alt="Mother and child walking" loading="lazy">
+      <div class="caption">Walking hand in hand 🤝</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1543342384-1f1350e27861?w=400&h=500&fit=crop" alt="Mom hugging children" loading="lazy">
+      <div class="caption">Safe in her arms 🫂</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=500&fit=crop" alt="Motherhood moments" loading="lazy">
+      <div class="caption">Precious moments 🌸</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1581952976147-5a2d15560349?w=400&h=500&fit=crop" alt="Generations of mothers" loading="lazy">
+      <div class="caption">Generations of love 💗</div>
+    </div>
+    <!-- Duplicate for infinite scroll -->
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=400&h=500&fit=crop" alt="Mother and daughter laughing" loading="lazy">
+      <div class="caption">Laughing together 💕</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=500&fit=crop" alt="Mother reading to child" loading="lazy">
+      <div class="caption">Storytime magic ✨</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1478071735755-29d2d68cfb46?w=400&h=500&fit=crop" alt="Mother and child walking" loading="lazy">
+      <div class="caption">Walking hand in hand 🤝</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1543342384-1f1350e27861?w=400&h=500&fit=crop" alt="Mom hugging children" loading="lazy">
+      <div class="caption">Safe in her arms 🫂</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=500&fit=crop" alt="Motherhood moments" loading="lazy">
+      <div class="caption">Precious moments 🌸</div>
+    </div>
+    <div class="photo-item">
+      <img src="https://images.unsplash.com/photo-1581952976147-5a2d15560349?w=400&h=500&fit=crop" alt="Generations of mothers" loading="lazy">
+      <div class="caption">Generations of love 💗</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MESSAGES ============ -->
+<section class="messages-section">
+  <div class="section-header">
+    <span class="section-label">From children everywhere</span>
+    <h2 class="section-title">Messages for Mom</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="messages-wall">
+    <div class="message-note" style="--rotation: -2deg;">
+      <p>"Mom, you are the reason I believe I can do anything. Thank you for never giving up on me."</p>
+      <span class="from">— A grateful daughter</span>
+    </div>
+    <div class="message-note" style="--rotation: 1.5deg;">
+      <p>"You worked three jobs and still made it to every game. I didn't understand then, but I see your sacrifice now."</p>
+      <span class="from">— Your proud son</span>
+    </div>
+    <div class="message-note" style="--rotation: -1deg;">
+      <p>"I'm sorry for every time I said 'I hate you.' I never meant it. You are my entire world, Mom."</p>
+      <span class="from">— Someone who finally understands</span>
+    </div>
+    <div class="message-note" style="--rotation: 2deg;">
+      <p>"To my mom in heaven — I still feel your love every single day. You never really left."</p>
+      <span class="from">— Forever your baby 🕊️</span>
+    </div>
+    <div class="message-note" style="--rotation: -1.5deg;">
+      <p>"Being a new mom is the hardest thing I've ever done. Now I truly understand just how incredible you are."</p>
+      <span class="from">— A new mother</span>
+    </div>
+    <div class="message-note" style="--rotation: 1deg;">
+      <p>"You adopted me and chose me. Not every hero wears a cape — some fill out paperwork and open their hearts."</p>
+      <span class="from">— Your chosen child 💛</span>
+    </div>
+    <div class="message-note" style="--rotation: -2.5deg;">
+      <p>"Mom, your cooking still tastes like home, even thousands of miles away. I carry you in every meal I make."</p>
+      <span class="from">— Living far from home</span>
+    </div>
+    <div class="message-note" style="--rotation: 0.5deg;">
+      <p>"Thank you for teaching me that strength isn't loud. It's waking up every morning and choosing love."</p>
+      <span class="from">— Learning from you still</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section">
+  <h2>Tell Your Mom You Love Her 💝</h2>
+  <p>Don't wait for a special day. Every day is Mother's Day when you carry her love in your heart.</p>
+  <a href="#hero" class="cta-btn">Send Her Love Today 🌹</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <span class="footer-heart">💕</span>
+  <p>Made with love for every mother in the world</p>
+  <p style="margin-top:0.5rem;font-size:0.95rem;">Happy Mother's Day 2026 · You are seen. You are loved. You are enough.</p>
+  <p style="margin-top:1.2rem;font-size:0.95rem;opacity:0.7;">© 2026 <a href="https://msaimraza.vercel.app/" target="_blank" rel="noopener" style="color:var(--rose-light);text-decoration:none;border-bottom:1px solid rgba(232,160,181,0.4);transition:all 0.3s ease;" onmouseover="this.style.borderBottomColor='var(--rose-light)';this.style.color='#fff'" onmouseout="this.style.borderBottomColor='rgba(232,160,181,0.4)';this.style.color='var(--rose-light)'">MSR</a> · All Rights Reserved</p>
+</footer>
+
+<script>
+// ========== FLOATING PETALS ==========
+const petalsContainer = document.getElementById('petals');
+const petalEmojis = ['🌸', '🌺', '💮', '🌷', '🪷', '🏵️', '🌹'];
+
+function createPetal() {
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.textContent = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
+  petal.style.left = Math.random() * 100 + '%';
+  petal.style.fontSize = (Math.random() * 18 + 14) + 'px';
+  petal.style.animationDuration = (Math.random() * 8 + 7) + 's';
+  petal.style.animationDelay = Math.random() * 2 + 's';
+  petalsContainer.appendChild(petal);
+  setTimeout(() => petal.remove(), 16000);
+}
+
+setInterval(createPetal, 800);
+for (let i = 0; i < 8; i++) setTimeout(createPetal, i * 300);
+
+// ========== SPARKLE CURSOR ==========
+const sparkles = ['✨', '💖', '🌸', '💕', '⭐'];
+let sparkleThrottle = 0;
+document.addEventListener('mousemove', (e) => {
+  if (Date.now() - sparkleThrottle < 120) return;
+  sparkleThrottle = Date.now();
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+  s.style.left = e.clientX + 'px';
+  s.style.top = e.clientY + 'px';
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 1000);
+});
+
+// ========== SCROLL ANIMATIONS ==========
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.section-header, .gallery-card, .tribute-card, .timeline-item, .letter-card, .counter-item, .message-note, .cta-section').forEach(el => {
+  observer.observe(el);
+});
+
+// ========== QUOTE CAROUSEL ==========
+const slides = document.querySelectorAll('.quote-slide');
+const dots = document.querySelectorAll('.quote-dot');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+  currentSlide = index;
+}
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+});
+
+setInterval(() => {
+  showSlide((currentSlide + 1) % slides.length);
+}, 5000);
+
+// ========== PARALLAX HERO ==========
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector('.hero-content');
+  if (hero && scrolled < window.innerHeight) {
+    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
+  }
+});
+</script>
+</body>
+</html>
