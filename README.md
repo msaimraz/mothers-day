@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="https://img.icons8.com/emoji/96/bouquet.png" alt="Bouquet" width="80"/>
-</p>
 
 <h1 align="center">💐 Happy Mother's Day 2026</h1>
 
